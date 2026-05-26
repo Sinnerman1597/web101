@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI MV 視覺新紀元 - 全球招商計劃</title>
+    <style>
+        /* 全域重設 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'PingFang TC', 'Microsoft JhengHei', sans-serif;
+        }
+
+        body {
+            background-color: #0a0a0c;
+            color: #ffffff;
+            overflow-x: hidden;
+        }
+
+        /* 滿版 YouTube 背景 container */
+        .video-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: -2;
+            pointer-events: none; /* 防止使用者點擊到 YouTube 播放器內部的按鈕 */
+            overflow: hidden;
+        }
+
+        /* 保持 16:9 比例滿版滿屏，並置中裁切 */
+        .video-background iframe {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 100vw;
+            height: 56.25vw; /* 100 * 9 / 16 */
+            min-height: 100vh;
+            min-width: 177.78vh; /* 100 * 16 / 9 */
+            transform: translate(-50%, -50%);
+        }
+
+        /* 頂級遮罩：疊加漸層與微網格，提升科技質感並確保文字清晰度 */
+        .video-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: -1;
+            background: linear-gradient(135deg, rgba(10, 10, 12, 0.85) 0%, rgba(20, 10, 35, 0.7) 100%);
+            backdrop-filter: blur(2px);
+        }
+
+        /* 主要內容區塊 */
+        .container {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        /* 導覽列 */
+        header {
+            width: 100%;
+            max-width: 1200px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            letter-spacing: 2px;
+            background: linear-gradient(45deg, #00f2fe, #4facfe, #f355ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .tag {
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(5px);
+        }
+
+        /* 主標題與內容 */
+        main {
+            max-width: 800px;
+            margin: auto 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        .badge {
+            background: linear-gradient(90deg, #ff007f, #7f00ff);
+            padding: 0.4rem 1.2rem;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            box-shadow: 0 0 20px rgba(255, 0, 127, 0.4);
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            font-weight: 900;
+            line-height: 1.2;
+            letter-spacing: 1px;
+        }
+
+        h1 span {
+            background: linear-gradient(90deg, #00f2fe, #f355ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        p.subtitle {
+            font-size: 1.25rem;
+            color: #cbd5e1;
+            max-width: 600px;
+            line-height: 1.6;
+        }
+
+        /* 招商主按鈕 (CTA) */
+        .cta-button {
+            margin-top: 1rem;
+            padding: 1rem 2.5rem;
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #ffffff;
+            background: linear-gradient(45deg, #00f2fe, #4facfe);
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 242, 254, 0.3);
+            text-decoration: none;
+            letter-spacing: 1px;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0, 242, 254, 0.6), 0 0 10px rgba(243, 85, 255, 0.5);
+            background: linear-gradient(45deg, #4facfe, #f355ff);
+        }
+
+        /* 頁尾資訊 */
+        footer {
+            width: 100%;
+            max-width: 1200px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.85rem;
+            color: #64748b;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            padding-top: 1.5rem;
+        }
+
+        .features {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .feature-item strong {
+            color: #ffffff;
+        }
+
+        /* 作品集區塊 */
+        .portfolio {
+            width: 100%;
+            max-width: 1200px;
+            margin: 2rem auto 0;
+            padding: 2rem;
+            background: rgba(15, 23, 42, 0.65);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 2rem;
+            backdrop-filter: blur(20px);
+        }
+
+        .portfolio h2 {
+            font-size: 2rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .portfolio p {
+            color: #94a3b8;
+            margin-bottom: 1.75rem;
+        }
+
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 1.25rem;
+        }
+
+        .portfolio-card {
+            background: rgba(15, 23, 42, 0.55);
+            border: 1px solid rgba(255, 255, 255, 0.07);
+            border-radius: 1.75rem;
+            overflow: hidden;
+            box-shadow: 0 20px 65px rgba(0, 0, 0, 0.18);
+        }
+
+        .portfolio-card .video-wrapper {
+            position: relative;
+            width: 100%;
+            padding-top: 177.78%;
+        }
+
+        .portfolio-card iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        .portfolio-card .caption {
+            padding: 1rem 1rem 1.25rem;
+            text-align: center;
+            color: #cbd5e1;
+            font-weight: 700;
+            letter-spacing: 0.02em;
+            background: transparent;
+        }
+
+        @media (max-width: 900px) {
+            .portfolio-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .contact-section {
+            width: 100%;
+            max-width: 1200px;
+            margin: 2rem auto 0;
+            padding: 2rem;
+            background: rgba(15, 23, 42, 0.72);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 2rem;
+            backdrop-filter: blur(24px);
+        }
+
+        .contact-section h2 {
+            font-size: 2rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .contact-section p {
+            color: #94a3b8;
+            margin-bottom: 1.75rem;
+            max-width: 760px;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+        }
+
+        .contact-grid .form-field,
+        .contact-grid .form-full {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .contact-grid label {
+            color: #cbd5e1;
+            font-size: 0.95rem;
+            font-weight: 600;
+        }
+
+        .contact-grid input,
+        .contact-grid textarea,
+        .contact-grid select {
+            width: 100%;
+            padding: 1rem 1.1rem;
+            border-radius: 1rem;
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            background: rgba(255, 255, 255, 0.06);
+            color: #eef2ff;
+            outline: none;
+            font-size: 1rem;
+            transition: border-color 0.25s ease, box-shadow 0.25s ease;
+        }
+
+        .contact-grid input:focus,
+        .contact-grid textarea:focus,
+        .contact-grid select:focus {
+            border-color: #7c3aed;
+            box-shadow: 0 0 0 4px rgba(124, 58, 237, 0.12);
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .contact-grid textarea {
+            min-height: 180px;
+            resize: vertical;
+        }
+
+        .contact-footer {
+            margin-top: 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .contact-info {
+            color: #94a3b8;
+            font-size: 0.95rem;
+            max-width: 520px;
+            text-align: left;
+        }
+
+        .submit-button {
+            padding: 1rem 2rem;
+            border-radius: 999px;
+            border: none;
+            background: linear-gradient(90deg, #00f2fe, #7c3aed);
+            color: #ffffff;
+            font-size: 1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: transform 0.25s ease, box-shadow 0.25s ease, opacity 0.25s ease;
+            box-shadow: 0 10px 30px rgba(0, 242, 254, 0.25);
+        }
+
+        .submit-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 14px 34px rgba(124, 58, 237, 0.3);
+        }
+
+        .submit-button:disabled {
+            opacity: 0.65;
+            cursor: not-allowed;
+        }
+
+        .form-toast {
+            position: fixed;
+            left: 50%;
+            bottom: 2rem;
+            transform: translateX(-50%) translateY(120%);
+            background: rgba(15, 23, 42, 0.92);
+            color: #f8fafc;
+            padding: 1rem 1.4rem;
+            border-radius: 999px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
+            backdrop-filter: blur(18px);
+            opacity: 0;
+            pointer-events: none;
+            transition: transform 0.25s ease, opacity 0.25s ease;
+            z-index: 50;
+        }
+
+        .form-toast.show {
+            transform: translateX(-50%) translateY(0);
+            opacity: 1;
+        }
+
+        @media (max-width: 768px) {
+            h1 { font-size: 2.2rem; }
+            p.subtitle { font-size: 1rem; }
+            footer {
+                flex-direction: column;
+                gap: 1rem;
+                text-align: center;
+            }
+            .features {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+            .contact-info {
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="video-background">
+        <iframe 
+            src="https://www.youtube.com/embed/wNXc_yrMtNs?autoplay=1&mute=1&loop=1&playlist=wNXc_yrMtNs&controls=0&showinfo=0&rel=0&playsinline=1&modestbranding=1&iv_load_policy=3" 
+            frameborder="0" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+            allowfullscreen>
+        </iframe>
+    </div>
+
+    <div class="video-overlay"></div>
+
+    <div class="container">
+        
+        <header>
+            <div class="logo">AIVISION.STUDIO</div>
+            <div class="tag">2026 全球代理商招募中</div>
+        </header>
+
+        <main>
+            <div class="badge">AI Music Video Generation</div>
+            <h1>用 AI 重新定義音樂視覺<br><span>顛覆傳統 MV 創作限制</span></h1>
+            <p class="subtitle">結合頂尖生成式 AI 技術，將文字與音軌轉化為電影級視覺巨作。我們正在尋找全球具備遠見的商業夥伴，共同開創兆元級的數位內容藍海市場。</p>
+            <a href="#apply" class="cta-button">立即獲取招商企劃書</a>
+        </main>
+
+        <section class="portfolio">
+            <h2>作品集展示</h2>
+            <p>純畫面展示，已設定自動播放、靜音與循環，呈現你的鞋款短片作品。</p>
+            <div class="portfolio-grid">
+                <div class="portfolio-card">
+                    <div class="video-wrapper">
+                        <iframe src="https://www.youtube.com/embed/h7hM5BlOcMY?autoplay=1&mute=1&loop=1&playlist=h7hM5BlOcMY&controls=0&modestbranding=1&rel=0&showinfo=0&iv_load_policy=3&playsinline=1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen title="VOBO皮鞋"></iframe>
+                    </div>
+                    <div class="caption">VOBO皮鞋</div>
+                </div>
+                <div class="portfolio-card">
+                    <div class="video-wrapper">
+                        <iframe src="https://www.youtube.com/embed/bcFnNsTVntk?autoplay=1&mute=1&loop=1&playlist=bcFnNsTVntk&controls=0&modestbranding=1&rel=0&showinfo=0&iv_load_policy=3&playsinline=1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen title="SHARK 鯊克防水鞋"></iframe>
+                    </div>
+                    <div class="caption">SHARK 鯊克防水鞋</div>
+                </div>
+                <div class="portfolio-card">
+                    <div class="video-wrapper">
+                        <iframe src="https://www.youtube.com/embed/n9VTjZdNvEQ?autoplay=1&mute=1&loop=1&playlist=n9VTjZdNvEQ&controls=0&modestbranding=1&rel=0&showinfo=0&iv_load_policy=3&playsinline=1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen title="黑武士鞋"></iframe>
+                    </div>
+                    <div class="caption">黑武士鞋</div>
+                </div>
+            </div>
+        </section>
+
+        <section id="apply" class="contact-section">
+            <h2>聯絡我／合作洽詢</h2>
+            <p>請填寫以下表單，我們會透過您留下的 Email 與需求簡述，優先回覆合作細節與招商方案。</p>
+            <form id="contact-form" action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSfHN8nIvaDiV5UeW05sBIzx0evo-YsPhtguEdrmsYt_T4tkhA/formResponse" method="POST" target="form-submit-frame" autocomplete="off">
+                <div class="contact-grid">
+                    <div class="form-field">
+                        <label for="name">姓名</label>
+                        <input id="name" name="entry.588998168" type="text" placeholder="請輸入您的姓名" required>
+                    </div>
+                    <div class="form-field">
+                        <label for="email">Email</label>
+                        <input id="email" name="entry.476214014" type="email" placeholder="請輸入聯絡 Email" required>
+                    </div>
+                    <div class="form-field">
+                        <label for="projectType">企劃類型</label>
+                        <select id="projectType" name="entry.1610329698" required>
+                            <option value="" disabled selected>請選擇合作類型</option>
+                            <option value="廣告品牌 MV">廣告品牌 MV</option>
+                            <option value="音樂人專屬短片">音樂人專屬短片</option>
+                            <option value="商業宣傳影片">商業宣傳影片</option>
+                            <option value="其他合作洽詢">其他合作洽詢</option>
+                        </select>
+                    </div>
+                    <div class="form-field">
+                        <label for="description">需求簡述</label>
+                        <textarea id="description" name="entry.1646642689" placeholder="請簡述您的合作需求、預算或時程" required></textarea>
+                    </div>
+                </div>
+                <div class="contact-footer">
+                    <div class="contact-info">本表單直接透過 Google Form 傳送，送出後不會離開本頁面。請放心提交，我們將儘速與您聯絡。</div>
+                    <button class="submit-button" type="submit">送出需求</button>
+                </div>
+            </form>
+            <iframe name="form-submit-frame" style="display:none;"></iframe>
+            <div class="form-toast" id="form-toast">需求已送出，我們將盡快與您聯絡！</div>
+        </section>
+
+        <footer>
+            <div class="features">
+                <div class="feature-item">⚡ <strong>極速生成</strong>：縮短 90% 傳統製作時程</div>
+                <div class="feature-item">🎨 <strong>無限風格</strong>：從賽博朋克到超現實主義</div>
+                <div class="feature-item">💼 <strong>高額分潤</strong>：專屬區域代理保障</div>
+            </div>
+            <p>&copy; 2026 AIVISION Studio. All rights reserved.</p>
+        </footer>
+
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                var form = document.getElementById('contact-form');
+                var submitBtn = form.querySelector('.submit-button');
+                var toast = document.getElementById('form-toast');
+                var iframe = document.querySelector('iframe[name="form-submit-frame"]');
+                var submitted = false;
+
+                function showToast() {
+                    toast.classList.add('show');
+                    setTimeout(function() {
+                        toast.classList.remove('show');
+                    }, 4500);
+                }
+
+                iframe.addEventListener('load', function() {
+                    if (!submitted) return;
+                    submitted = false;
+                    submitBtn.disabled = false;
+                    form.reset();
+                    showToast();
+                });
+
+                form.addEventListener('submit', function() {
+                    submitBtn.disabled = true;
+                    submitted = true;
+                    setTimeout(function() {
+                        if (submitted) {
+                            submitted = false;
+                            submitBtn.disabled = false;
+                            showToast();
+                        }
+                    }, 10000);
+                });
+            });
+        </script>
+
+    </div>
+
+</body>
+</html>
