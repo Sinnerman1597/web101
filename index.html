@@ -1,0 +1,1296 @@
+<!DOCTYPE html>
+<html lang="zh-TW" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>趙睿濬 Jimmy Zhao | 頂級 AI 永續管理顧問</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Noto+Sans+TC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SzlrxWriC3Kz4zEdeVxbG7B4Vb0bH7b+l2LvPqTf5Vjdi4pKFm9rkF6WN2g9pc4RHIu7DqN7yUXtzpLhY1ag==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        blue: {
+                            50: '#E8F2FF',
+                            100: '#BFE3F6',
+                            200: '#4BA3F0',
+                            300: '#1D73E8',
+                            400: '#1669CD',
+                            500: '#0E53A2',
+                            600: '#0F2A4D',
+                        },
+                        sky: {
+                            50: '#E8F2FF',
+                            100: '#BFE3F6',
+                            200: '#4BA3F0',
+                            300: '#1D73E8',
+                        },
+                        aqua: {
+                            50: '#BFE3F6',
+                            100: '#A9DFF0',
+                            200: '#7CC6EA',
+                            300: '#4BA3F0',
+                        },
+                        coral: {
+                            DEFAULT: '#FF8FA3',
+                            50: '#FFE7EC',
+                            100: '#FFCED6',
+                        },
+                        navy: '#0F2A4D',
+                        slate: {
+                            50: '#F3F6FA',
+                            100: '#E6EBF1',
+                            200: '#CBD7E5',
+                        },
+                        white: '#FFFFFF',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'Noto Sans TC', 'sans-serif'],
+                    },
+                    animation: {
+                        'pulse-slow': 'pulse 6s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'float-slow': 'float 8s ease-in-out infinite',
+                        'float-delayed': 'float 8s ease-in-out infinite 4s',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px) scale(1)' },
+                            '50%': { transform: 'translateY(-15px) scale(1.03)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom Premium CSS & Glassmorphism Utility */
+        .glass {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            border: 1px solid rgba(255, 255, 255, 0.4);
+        }
+        
+        .glass-dark {
+            background: rgba(15, 23, 42, 0.03);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(15, 23, 42, 0.05);
+        }
+
+        .premium-grid {
+            background-image: radial-gradient(rgba(37, 99, 235, 0.08) 1.2px, transparent 1.2px);
+            background-size: 32px 32px;
+        }
+
+        .shimmer {
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.6), transparent);
+            background-size: 200% 100%;
+            animation: shimmer-effect 3s infinite;
+        }
+
+        @keyframes shimmer-effect {
+            0% { background-position: -200% 0; }
+            100% { background-position: 200% 0; }
+        }
+
+        /* Hide Scrollbars */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
+        /* Typewriter Cursor */
+        .cursor-blink::after {
+            content: '|';
+            animation: blink 0.8s infinite;
+        }
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
+
+        /* Scroll reveal custom styles */
+        .reveal {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="bg-white text-slate-800 font-sans antialiased overflow-x-hidden selection:bg-blue-100 selection:text-blue-800">
+
+    <!-- Subtle Premium Background Visual Elements -->
+    <div class="fixed inset-0 pointer-events-none z-0 overflow-hidden">
+        <!-- Grid overlay -->
+        <div class="absolute inset-0 premium-grid opacity-75"></div>
+        
+        <!-- Interactive & Flowing Aura (Light gradients) -->
+        <div class="absolute top-[-10%] left-[-10%] w-[50%] h-[50%] rounded-full bg-blue-100/40 filter blur-[120px] animate-pulse-slow"></div>
+        <div class="absolute top-[30%] right-[-10%] w-[45%] h-[45%] rounded-full bg-sky-100/30 filter blur-[100px] animate-float-slow"></div>
+        <div class="absolute bottom-[-10%] left-[20%] w-[50%] h-[50%] rounded-full bg-blue-50/40 filter blur-[120px] animate-float-delayed"></div>
+        
+        <!-- Particles Canvas Canvas container -->
+        <canvas id="particleCanvas" class="absolute inset-0 opacity-40"></canvas>
+    </div>
+
+    <!-- 1️⃣ Sticky Header / Navigation Bar -->
+    <header id="mainNav" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 py-5">
+        <div class="max-w-7xl mx-auto px-6">
+            <nav class="glass rounded-2xl px-6 py-3.5 flex items-center justify-between shadow-sm transition-all duration-300">
+                <!-- Brand Identity -->
+                <a href="#hero" class="flex items-center gap-3 group">
+                    <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-blue-600 via-blue-200 to-sky-200 p-[2px] shadow-md shadow-blue-500/10 transition-transform duration-300 group-hover:scale-105">
+                        <div class="w-full h-full bg-white rounded-[10px] flex items-center justify-center">
+                            <span class="font-extrabold text-base bg-gradient-to-tr from-blue-600 to-sky-200 bg-clip-text text-transparent">JZ</span>
+                        </div>
+                    </div>
+                    <div class="flex flex-col">
+                        <span class="font-extrabold text-slate-900 tracking-tight text-base">趙睿濬 <span class="text-blue-600">Jimmy</span></span>
+                        <span class="text-[10px] text-slate-500 font-medium tracking-wider uppercase">AI & 永續轉型顧問</span>
+                    </div>
+                </a>
+
+                <!-- Desktop Navigation Menu -->
+                <div class="hidden md:flex items-center gap-1.5">
+                    <a href="#hero" class="px-4 py-2 rounded-xl text-sm font-medium text-slate-600 hover:text-blue-600 hover:bg-slate-50/50 transition-all duration-200">首頁</a>
+                    <a href="#about" class="px-4 py-2 rounded-xl text-sm font-medium text-slate-600 hover:text-blue-600 hover:bg-slate-50/50 transition-all duration-200">關於我</a>
+                    <a href="#solutions" class="px-4 py-2 rounded-xl text-sm font-medium text-slate-600 hover:text-blue-600 hover:bg-slate-50/50 transition-all duration-200">痛點解決方案</a>
+                    <a href="#cases" class="px-4 py-2 rounded-xl text-sm font-medium text-slate-600 hover:text-blue-600 hover:bg-slate-50/50 transition-all duration-200">實戰案例</a>
+                    <a href="#consult" class="px-4 py-2 rounded-xl text-sm font-medium text-slate-600 hover:text-blue-600 hover:bg-slate-50/50 transition-all duration-200">預約諮詢</a>
+                </div>
+
+                <!-- Action Button -->
+                <div class="hidden md:block">
+                    <a href="https://calendar.app.google/5ooLvYjvvUxjaw2D8" target="_blank" class="glass-dark hover:bg-blue-600 hover:text-white hover:border-blue-600 text-slate-800 text-xs font-semibold px-4 py-2.5 rounded-xl flex items-center gap-2 shadow-sm transition-all duration-300 group">
+                        <span>預約一對一對談</span>
+                        <i data-lucide="arrow-right" class="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform"></i>
+                    </a>
+                </div>
+
+                <!-- Mobile Hamburger Button -->
+                <button id="menuBtn" class="md:hidden p-2 rounded-xl hover:bg-slate-100 transition-colors" aria-label="Toggle Menu">
+                    <i id="menuIcon" data-lucide="menu" class="w-6 h-6 text-slate-700"></i>
+                </button>
+            </nav>
+        </div>
+
+        <!-- Mobile Drawer Menu -->
+        <div id="mobileMenu" class="hidden fixed inset-x-0 top-[88px] mx-6 p-6 glass rounded-2xl shadow-xl border border-slate-200/50 flex flex-col gap-4 animate-fade-in md:hidden">
+            <a href="#hero" class="mobile-nav-link text-lg font-medium text-slate-700 px-3 py-2 rounded-lg hover:bg-slate-50/80 hover:text-blue-600 transition-all">首頁</a>
+            <a href="#about" class="mobile-nav-link text-lg font-medium text-slate-700 px-3 py-2 rounded-lg hover:bg-slate-50/80 hover:text-blue-600 transition-all">關於我</a>
+            <a href="#solutions" class="mobile-nav-link text-lg font-medium text-slate-700 px-3 py-2 rounded-lg hover:bg-slate-50/80 hover:text-blue-600 transition-all">痛點解決方案</a>
+            <a href="#cases" class="mobile-nav-link text-lg font-medium text-slate-700 px-3 py-2 rounded-lg hover:bg-slate-50/80 hover:text-blue-600 transition-all">實戰案例</a>
+            <a href="#consult" class="mobile-nav-link text-lg font-medium text-slate-700 px-3 py-2 rounded-lg hover:bg-slate-50/80 hover:text-blue-600 transition-all">預約諮詢</a>
+            <div class="h-px bg-slate-100 my-1"></div>
+            <a href="https://calendar.app.google/5ooLvYjvvUxjaw2D8" target="_blank" class="w-full bg-blue-600 text-white text-center py-3.5 rounded-xl font-medium shadow-md shadow-blue-500/10 hover:bg-blue-700 active:scale-[0.98] transition-all flex items-center justify-center gap-2">
+                <span>立即預約諮詢</span>
+                <i data-lucide="arrow-right" class="w-4 h-4"></i>
+            </a>
+        </div>
+    </header>
+
+    <!-- 2️⃣ Hero Section (最重要第一眼) -->
+    <section id="hero" class="relative min-h-screen flex items-center pt-32 pb-20 z-10">
+        <div class="max-w-7xl mx-auto px-6 w-full grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            
+            <!-- Left Column: Copy & CTAs -->
+            <div class="lg:col-span-7 flex flex-col text-left">
+                <!-- Mini Badge -->
+                <div class="inline-flex items-center gap-2 bg-blue-50/80 border border-blue-200/50 text-blue-700 px-4 py-1.5 rounded-full text-xs font-semibold tracking-wider uppercase mb-6 self-start animate-fade-in-down shadow-sm">
+                    <span class="flex h-2 w-2 relative">
+                        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-300 opacity-75"></span>
+                        <span class="relative inline-flex rounded-full h-2 w-2 bg-blue-500"></span>
+                    </span>
+                    AI 與 ESG 的跨界策略實踐者
+                </div>
+
+                <!-- Animated Main Title -->
+                <h1 class="text-4xl sm:text-5xl md:text-6xl font-black text-slate-900 leading-[1.15] mb-6">
+                    輔助企業卓越轉型 <br class="hidden sm:inline">
+                    <span class="bg-gradient-to-r from-blue-600 via-sky-100 to-sky-200 bg-clip-text text-transparent cursor-blink font-black tracking-tight" id="typewriter"></span>
+                </h1>
+
+                <!-- Subtitle / Value Proposition -->
+                <p class="text-lg md:text-xl text-slate-600 font-light leading-relaxed mb-8 max-w-2xl">
+                    Jimmy helps businesses transform knowledge, workflows, and customer experience through practical Sustainable solutions. <span class="text-slate-800 font-normal">將複雜的永續議題，化為可落地的組織競爭力。</span>
+                </p>
+
+                <!-- Premium CTA Buttons -->
+                <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
+                    <!-- High-interaction Primary CTA Button -->
+                    <a id="interactiveCTA" href="https://calendar.app.google/5ooLvYjvvUxjaw2D8" target="_blank" class="relative group overflow-hidden px-8 py-4.5 rounded-2xl bg-gradient-to-r from-blue-600 to-sky-200 p-[1px] shadow-lg shadow-blue-500/10 hover:shadow-xl hover:shadow-blue-500/10 active:scale-[0.98] transition-all duration-300">
+                        <!-- Inside white layout to mock premium border design -->
+                        <div class="bg-white group-hover:bg-gradient-to-r group-hover:from-blue-600 group-hover:to-sky-200 transition-colors duration-300 rounded-[15px] px-6 py-3.5 flex items-center justify-center gap-3">
+                            <div class="flex flex-col text-left">
+                                <span class="text-[10px] text-slate-400 group-hover:text-blue-100 font-medium uppercase tracking-widest transition-colors" id="ctaSubtext">諮詢預約通道</span>
+                                <span class="text-sm font-bold text-slate-800 group-hover:text-white transition-colors" id="ctaMainText">立即預約 1:1 策略諮詢</span>
+                            </div>
+                            <i data-lucide="calendar" class="w-5 h-5 text-blue-600 group-hover:text-white group-hover:rotate-12 transition-all"></i>
+                        </div>
+                    </a>
+
+                    <!-- Secondary CTA Button -->
+                    <a href="#solutions" class="glass px-8 py-4 rounded-2xl text-sm font-semibold text-slate-700 hover:text-blue-600 hover:bg-slate-50/50 hover:border-blue-200 flex items-center justify-center gap-2 transition-all duration-300 shadow-sm">
+                        <span>探索四大解決方案</span>
+                        <i data-lucide="chevron-down" class="w-4 h-4 animate-bounce"></i>
+                    </a>
+                </div>
+
+                <!-- Trusted/Credentials Badges -->
+                <div class="mt-12 pt-8 border-t border-slate-200/50">
+                    <p class="text-[11px] font-bold text-slate-400 tracking-wider uppercase mb-4">企業實戰服務領域</p>
+                    <div class="flex flex-wrap gap-x-6 gap-y-3 items-center text-slate-500 text-sm font-medium">
+                        <span class="flex items-center gap-1.5"><i data-lucide="cpu" class="w-4 h-4 text-slate-400"></i> 半導體封測與製造</span>
+                        <span class="flex items-center gap-1.5"><i data-lucide="battery-charging" class="w-4 h-4 text-slate-400"></i> 電子零組件供應鏈</span>
+                        <span class="flex items-center gap-1.5"><i data-lucide="book-open" class="w-4 h-4 text-slate-400"></i> 文化與出版產業</span>
+                        <span class="flex items-center gap-1.5"><i data-lucide="clapperboard" class="w-4 h-4 text-slate-400"></i> 數位娛樂與創作者</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Column: Visual SaaS Widget Presentation -->
+            <div class="lg:col-span-5 relative flex justify-center lg:justify-end">
+                <div class="relative w-full max-w-[420px] bg-slate-50/30 rounded-3xl p-4 border border-white/50 shadow-2xl animate-float-slow">
+                    <!-- Decorative Floating Elements -->
+                    <div class="absolute -top-6 -left-6 bg-blue-600 text-white rounded-2xl px-4 py-2 text-xs font-bold shadow-lg flex items-center gap-2 border border-blue-500">
+                        <span class="flex h-2 w-2 relative">
+                            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-75"></span>
+                            <span class="relative inline-flex rounded-full h-2 w-2 bg-white"></span>
+                        </span>
+                        <span>AI 智能自動化模組</span>
+                    </div>
+                    
+                    <div class="absolute -bottom-6 -right-4 bg-blue-600 text-white rounded-2xl p-4 text-xs shadow-lg border border-blue-500 flex flex-col gap-1">
+                        <div class="flex items-center gap-1">
+                            <i data-lucide="award" class="w-4 h-4"></i>
+                            <span class="font-bold">iPAS 淨零碳規劃認證</span>
+                        </div>
+                        <span class="text-blue-200 text-[10px]">國家級數位永續跨域專家</span>
+                    </div>
+
+                    <!-- Mock SaaS Dashboard Card -->
+                    <div class="glass rounded-2xl overflow-hidden shadow-md">
+                        <div class="px-5 py-4 border-b border-slate-100 flex items-center justify-between bg-white/40">
+                            <div class="flex items-center gap-2">
+                                <span class="w-3 h-3 rounded-full bg-red-400"></span>
+                                <span class="w-3 h-3 rounded-full bg-yellow-400"></span>
+                                <span class="w-3 h-3 rounded-full bg-green-400"></span>
+                            </div>
+                            <span class="text-xs font-medium text-slate-400 tracking-wider">Jimmy's Carbon Engine v1.2</span>
+                            <i data-lucide="settings" class="w-4 h-4 text-slate-400"></i>
+                        </div>
+                        
+                        <div class="p-5 flex flex-col gap-4">
+                            <!-- Metrics Grid -->
+                            <div class="grid grid-cols-2 gap-3">
+                                <div class="bg-white/60 p-3 rounded-xl border border-slate-100/50">
+                                    <span class="text-[10px] text-slate-400 font-bold block mb-1">ISO 14064 碳盤查</span>
+                                    <span class="text-lg font-bold text-slate-800">100% 合規</span>
+                                </div>
+                                <div class="bg-white/60 p-3 rounded-xl border border-slate-100/50">
+                                    <span class="text-[10px] text-slate-400 font-bold block mb-1">人工處理流程降幅</span>
+                                    <span class="text-lg font-bold text-blue-600">-70% 效率提升</span>
+                                </div>
+                            </div>
+
+                            <!-- Interactive Live Terminal Mockup -->
+                            <div class="bg-slate-900 text-slate-300 font-mono text-[11px] p-4 rounded-xl leading-relaxed shadow-inner overflow-hidden relative">
+                                <div class="absolute right-3 top-3 flex items-center gap-1.5">
+                                    <span class="text-[10px] text-blue-400 font-bold uppercase tracking-widest animate-pulse">Live</span>
+                                    <span class="w-1.5 h-1.5 bg-blue-400 rounded-full"></span>
+                                </div>
+                                <div class="text-slate-500 mb-1">&gt; python carbon_analyzer.py</div>
+                                <div class="text-blue-300">[INFO] 載入半導體產業 ESG 框架指標...</div>
+                                <div class="text-sky-400">[SYSTEM] 自動偵測碳足跡異常變動點...</div>
+                                <div class="text-blue-300">[DONE] 生成 ISO 14064-1 內部查證報表.</div>
+                                <div class="mt-2 text-white/90 border-t border-slate-800 pt-1.5 flex items-center gap-2">
+                                    <i data-lucide="check-circle" class="w-3.5 h-3.5 text-blue-400"></i>
+                                    <span>流程建構完成。就緒狀態 🟢</span>
+                                </div>
+                            </div>
+
+                            <!-- Skills Tag list -->
+                            <div class="flex flex-wrap gap-1.5 mt-1">
+                                <span class="text-[10px] bg-blue-50 text-blue-600 px-2.5 py-1 rounded-md font-medium">Python 數據分析</span>
+                                <span class="text-[10px] bg-blue-50 text-blue-600 px-2.5 py-1 rounded-md font-medium">流程自動化</span>
+                                <span class="text-[10px] bg-blue-50 text-blue-600 px-2.5 py-1 rounded-md font-medium">ESG策略</span>
+                                <span class="text-[10px] bg-coral-50 text-coral px-2.5 py-1 rounded-md font-medium">精實管理</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- 3️⃣ About Section (關於趙睿濬) -->
+    <section id="about" class="py-24 relative z-10 reveal">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-xs font-extrabold text-blue-600 uppercase tracking-widest block mb-3">Professional Bio</span>
+                <h2 class="text-3xl md:text-4xl font-extrabold text-slate-950 tracking-tight">
+                    資深永續與 AI 技術的雙棲推手
+                </h2>
+                <div class="w-16 h-1.5 bg-gradient-to-r from-blue-600 to-sky-200 rounded-full mx-auto mt-4"></div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Left: Professional Profile Card -->
+                <div class="lg:col-span-5">
+                    <div class="glass rounded-3xl p-8 relative shadow-xl overflow-hidden border border-white/60">
+                        <!-- Background glow effect -->
+                        <div class="absolute -top-16 -right-16 w-36 h-36 bg-blue-100 rounded-full filter blur-2xl opacity-55"></div>
+                        
+                        <!-- Header with Name -->
+                        <div class="flex items-start justify-between mb-8">
+                            <div>
+                                <h3 class="text-2xl font-black text-slate-900 tracking-tight">趙睿濬 <span class="text-blue-600 font-light text-xl">Jimmy Zhao</span></h3>
+                                <p class="text-sm font-semibold text-slate-500 mt-1">資深永續管理與跨界策略顧問</p>
+                            </div>
+                            <span class="bg-blue-50 text-blue-700 font-bold text-xs px-3 py-1.5 rounded-xl border border-blue-100">5+ 年實戰經驗</span>
+                        </div>
+
+                        <!-- Bio Content -->
+                        <p class="text-slate-600 text-sm leading-relaxed mb-6">
+                            擁有超過五年的永續管理與企業輔導經驗，協助無數企業面對全球產業綠色轉型、淨零碳排與 ESG 治理之艱巨挑戰。
+                        </p>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-8">
+                            擅長跨足遊戲、補教、管理顧問等高度競爭產業，具備出色的跨域商業理解與整合策略制定能力。Jimmy 將生硬法規與複雜技術融合，化為可落地的轉型地圖。
+                        </p>
+
+                        <!-- Key Stats Grid -->
+                        <div class="grid grid-cols-2 gap-4 pt-6 border-t border-slate-100">
+                            <div>
+                                <span class="text-3xl font-extrabold text-slate-900 bg-gradient-to-r from-blue-600 to-sky-200 bg-clip-text text-transparent">100%</span>
+                                <span class="text-xs font-semibold text-slate-500 block mt-1">協助通過外部查證</span>
+                            </div>
+                            <div>
+                                <span class="text-3xl font-extrabold text-slate-900 bg-gradient-to-r from-blue-600 to-sky-200 bg-clip-text text-transparent">-40%</span>
+                                <span class="text-xs font-semibold text-slate-500 block mt-1">典型工時流程縮減</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right: Dual Capability Framework -->
+                <div class="lg:col-span-7 flex flex-col gap-6">
+                    <h4 class="text-xl font-bold text-slate-900 tracking-tight mb-2">掌握核心，架構未來企業韌性</h4>
+                    
+                    <!-- Capability card 1 -->
+                    <div class="glass p-6 rounded-2xl flex gap-5 hover:translate-x-2 transition-all duration-300 group shadow-sm">
+                        <div class="w-12 h-12 rounded-xl bg-blue-50 flex items-center justify-center text-blue-600 group-hover:bg-blue-600 group-hover:text-white transition-all shrink-0">
+                            <i data-lucide="shield-check" class="w-6 h-6"></i>
+                        </div>
+                        <div>
+                            <h5 class="text-base font-bold text-slate-900 mb-1">永續策略與法規遵循</h5>
+                            <p class="text-xs text-slate-500 leading-relaxed">
+                                專精 ISO 14064-1 溫室氣體內部查證體系、iPAS 淨零碳規劃與跨產業 ESG 治理戰略規劃。確保企業面對國內外綠色法規具備全面合規能力。
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Capability card 2 -->
+                    <div class="glass p-6 rounded-2xl flex gap-5 hover:translate-x-2 transition-all duration-300 group shadow-sm">
+                        <div class="w-12 h-12 rounded-xl bg-blue-50 flex items-center justify-center text-blue-600 group-hover:bg-blue-600 group-hover:text-white transition-all shrink-0">
+                            <i data-lucide="terminal" class="w-6 h-6"></i>
+                        </div>
+                        <div>
+                            <h5 class="text-base font-bold text-slate-900 mb-1">Python 數據分析與 AI 流程自動化</h5>
+                            <p class="text-xs text-slate-500 leading-relaxed">
+                                打破傳統手工作業，用現代科技武裝永續管理。以 Python 自主開發數據清洗、報表生成、碳排放監測自動化模型，將工作量減少高達 70%。
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Capability card 3 -->
+                    <div class="glass p-6 rounded-2xl flex gap-5 hover:translate-x-2 transition-all duration-300 group shadow-sm">
+                        <div class="w-12 h-12 rounded-xl bg-blue-50 flex items-center justify-center text-blue-600 group-hover:bg-blue-600 group-hover:text-white transition-all shrink-0">
+                            <i data-lucide="git-branch" class="w-6 h-6"></i>
+                        </div>
+                        <div>
+                            <h5 class="text-base font-bold text-slate-900 mb-1">跨域商業理解與策略整合</h5>
+                            <p class="text-xs text-slate-500 leading-relaxed">
+                                橫跨半導體、電子零件、數位娛樂、補習教育及頂尖顧問業，能迅速理解不同產業的核心痛點，設計「真正可行、合乎預算、立竿見影」的永續方針。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 4️⃣ Enterprise Pain Solutions Section (企業痛點解決方案) -->
+    <section id="solutions" class="py-24 relative z-10 bg-slate-50/50 reveal">
+        <div class="max-w-7xl mx-auto px-6">
+            
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-xs font-extrabold text-blue-600 uppercase tracking-widest block mb-3">Expertise & Solutions</span>
+                <h2 class="text-3xl md:text-4xl font-extrabold text-slate-950 tracking-tight">
+                    專為企業轉型量身訂製的四大解決方案
+                </h2>
+                <p class="text-slate-500 text-sm mt-3">化解法規重擔、人才斷層，全面解構您的組織核心痛點</p>
+                <div class="w-16 h-1.5 bg-gradient-to-r from-blue-600 to-sky-200 rounded-full mx-auto mt-4"></div>
+            </div>
+
+            <!-- Solutions Grid (4 Cards) -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                
+                <!-- Solution 1 -->
+                <div class="glass hover:bg-white p-8 rounded-3xl border border-slate-200/40 shadow-sm hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 group flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-6">
+                            <div class="w-12 h-12 rounded-2xl bg-blue-50 flex items-center justify-center text-blue-600">
+                                <i data-lucide="layout-grid" class="w-6 h-6"></i>
+                            </div>
+                            <span class="text-[10px] font-bold text-slate-400 tracking-wider uppercase bg-slate-100 px-3 py-1 rounded-full">合規系統建置</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-4 group-hover:text-blue-600 transition-colors">1. 制度架構建立</h3>
+                        
+                        <!-- Pain / Solution / Benefit Structure -->
+                        <div class="space-y-4 mb-8">
+                            <div class="flex items-start gap-2.5">
+                                <span class="bg-red-50 text-red-600 text-[10px] font-extrabold px-2 py-0.5 rounded mt-1 shrink-0">痛點</span>
+                                <p class="text-xs text-slate-500">缺乏系統化 ESG 指標，面對碳盤查無從下手，文件混亂難以應對外部稽核。</p>
+                            </div>
+                            <div class="flex items-start gap-2.5">
+                                <span class="bg-blue-50 text-blue-600 text-[10px] font-extrabold px-2 py-0.5 rounded mt-1 shrink-0">方案</span>
+                                <p class="text-xs text-slate-700">導入客製化 ISO 14064-1 內部治理體系，將複雜填報指標模組化與數位化。</p>
+                            </div>
+                            <div class="flex items-start gap-2.5">
+                                <span class="bg-blue-50 text-blue-600 text-[10px] font-extrabold px-2 py-0.5 rounded mt-1 shrink-0">效益</span>
+                                <p class="text-xs font-medium text-blue-700">與國際標準合規無縫接軌，省下 40% 傳統人工碳管理與文件整理工時。</p>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="#consult" class="text-xs font-bold text-slate-500 group-hover:text-blue-600 flex items-center gap-1.5 self-start group transition-all">
+                        <span>申請諮詢評估</span>
+                        <i data-lucide="arrow-right" class="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform"></i>
+                    </a>
+                </div>
+
+                <!-- Solution 2 -->
+                <div class="glass hover:bg-white p-8 rounded-3xl border border-slate-200/40 shadow-sm hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 group flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-6">
+                            <div class="w-12 h-12 rounded-2xl bg-blue-50 flex items-center justify-center text-blue-600">
+                                <i data-lucide="users" class="w-6 h-6"></i>
+                            </div>
+                            <span class="text-[10px] font-bold text-slate-400 tracking-wider uppercase bg-slate-100 px-3 py-1 rounded-full">人才賦能計畫</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-4 group-hover:text-blue-600 transition-colors">2. 專案團隊建置</h3>
+                        
+                        <!-- Pain / Solution / Benefit Structure -->
+                        <div class="space-y-4 mb-8">
+                            <div class="flex items-start gap-2.5">
+                                <span class="bg-red-50 text-red-600 text-[10px] font-extrabold px-2 py-0.5 rounded mt-1 shrink-0">痛點</span>
+                                <p class="text-xs text-slate-500">組織跨部門推動阻力重重，員工缺乏綠領永續意識，缺乏內部實行推手。</p>
+                            </div>
+                            <div class="flex items-start gap-2.5">
+                                <span class="bg-blue-50 text-blue-600 text-[10px] font-extrabold px-2 py-0.5 rounded mt-1 shrink-0">方案</span>
+                                <p class="text-xs text-slate-700">量身定制企業永續教育訓練，深度融入國家級 iPAS 淨零碳規劃培育機制。</p>
+                            </div>
+                            <div class="flex items-start gap-2.5">
+                                <span class="bg-blue-50 text-blue-600 text-[10px] font-extrabold px-2 py-0.5 rounded mt-1 shrink-0">效益</span>
+                                <p class="text-xs font-medium text-blue-700">100% 建立敏捷、具自主查證與減碳評估能力的永續敏捷專案小組。</p>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="#consult" class="text-xs font-bold text-slate-500 group-hover:text-blue-600 flex items-center gap-1.5 self-start group transition-all">
+                        <span>申請諮詢評估</span>
+                        <i data-lucide="arrow-right" class="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform"></i>
+                    </a>
+                </div>
+
+                <!-- Solution 3 -->
+                <div class="glass hover:bg-white p-8 rounded-3xl border border-slate-200/40 shadow-sm hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 group flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-6">
+                            <div class="w-12 h-12 rounded-2xl bg-amber-50 flex items-center justify-center text-amber-600">
+                                <i data-lucide="alert-triangle" class="w-6 h-6"></i>
+                            </div>
+                            <span class="text-[10px] font-bold text-slate-400 tracking-wider uppercase bg-slate-100 px-3 py-1 rounded-full">法規風險控制</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-4 group-hover:text-amber-600 transition-colors">3. 法規遵循與風險控管</h3>
+                        
+                        <!-- Pain / Solution / Benefit Structure -->
+                        <div class="space-y-4 mb-8">
+                            <div class="flex items-start gap-2.5">
+                                <span class="bg-red-50 text-red-600 text-[10px] font-extrabold px-2 py-0.5 rounded mt-1 shrink-0">痛點</span>
+                                <p class="text-xs text-slate-500">國內外永續法遵、碳關稅政令頻繁更新，面臨潛在巨額罰鍰與排碳限制風險。</p>
+                            </div>
+                            <div class="flex items-start gap-2.5">
+                                <span class="bg-amber-50 text-amber-600 text-[10px] font-extrabold px-2 py-0.5 rounded mt-1 shrink-0">方案</span>
+                                <p class="text-xs text-slate-700">以 AI 技術建置法規動態監視器，制定精準法規預警與組織風險矩陣地圖。</p>
+                            </div>
+                            <div class="flex items-start gap-2.5">
+                                <span class="bg-blue-50 text-blue-600 text-[10px] font-extrabold px-2 py-0.5 rounded mt-1 shrink-0">效益</span>
+                                <p class="text-xs font-medium text-blue-700">降低 95% 潛在違規風險，100% 確保企業營運符合國際碳排合規防線。</p>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="#consult" class="text-xs font-bold text-slate-500 group-hover:text-amber-600 flex items-center gap-1.5 self-start group transition-all">
+                        <span>申請諮詢評估</span>
+                        <i data-lucide="arrow-right" class="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform"></i>
+                    </a>
+                </div>
+
+                <!-- Solution 4 -->
+                <div class="glass hover:bg-white p-8 rounded-3xl border border-slate-200/40 shadow-sm hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 group flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-6">
+                            <div class="w-12 h-12 rounded-2xl bg-blue-50 flex items-center justify-center text-blue-600">
+                                <i data-lucide="network" class="w-6 h-6"></i>
+                            </div>
+                            <span class="text-[10px] font-bold text-slate-400 tracking-wider uppercase bg-slate-100 px-3 py-1 rounded-full">供應鏈攻守盟</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-4 group-hover:text-blue-600 transition-colors">4. 供應鏈與客戶回應策略</h3>
+                        
+                        <!-- Pain / Solution / Benefit Structure -->
+                        <div class="space-y-4 mb-8">
+                            <div class="flex items-start gap-2.5">
+                                <span class="bg-red-50 text-red-600 text-[10px] font-extrabold px-2 py-0.5 rounded mt-1 shrink-0">痛點</span>
+                                <p class="text-xs text-slate-500">被國際巨頭品牌客戶（如 Apple 鏈、RE100）索求淨零藍圖，面臨抽單危機。</p>
+                            </div>
+                            <div class="flex items-start gap-2.5">
+                                <span class="bg-blue-50 text-blue-600 text-[10px] font-extrabold px-2 py-0.5 rounded mt-1 shrink-0">方案</span>
+                                <p class="text-xs text-slate-700">以先進數據建模制定合規供應鏈管理規劃，設計具高度說服力的綠色簡報。</p>
+                            </div>
+                            <div class="flex items-start gap-2.5">
+                                <span class="bg-blue-50 text-blue-600 text-[10px] font-extrabold px-2 py-0.5 rounded mt-1 shrink-0">效益</span>
+                                <p class="text-xs font-medium text-blue-700">鞏固全球核心供應鏈重要席位，極致開拓前所未有的綠色低碳市場商機。</p>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="#consult" class="text-xs font-bold text-slate-500 group-hover:text-blue-600 flex items-center gap-1.5 self-start group transition-all">
+                        <span>申請諮詢評估</span>
+                        <i data-lucide="arrow-right" class="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform"></i>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 5️⃣ Real-world Case Studies Section (實戰案例) -->
+    <section id="cases" class="py-24 relative z-10 reveal">
+        <div class="max-w-7xl mx-auto px-6">
+            
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-xs font-extrabold text-blue-600 uppercase tracking-widest block mb-3">Proven Success</span>
+                <h2 class="text-3xl md:text-4xl font-extrabold text-slate-950 tracking-tight">
+                    跨產業實戰輔助案例成果
+                </h2>
+                <p class="text-slate-500 text-sm mt-3">看見真正的轉變：深度剖析導入前後的真實效益</p>
+                <div class="w-16 h-1.5 bg-gradient-to-r from-blue-600 via-sky-200 to-sky-100 rounded-full mx-auto mt-4"></div>
+            </div>
+
+            <!-- Tab Buttons for Interactive Switch (Optional but super nice) -->
+            <div class="flex flex-wrap justify-center gap-3 mb-12">
+                <button onclick="switchCase('semi')" id="btn-semi" class="case-tab-btn active px-6 py-2.5 rounded-full text-sm font-semibold border transition-all duration-300 bg-blue-600 text-white border-blue-600 shadow-md shadow-blue-500/10">
+                    半導體與電子元件
+                </button>
+                <button onclick="switchCase('electronics')" id="btn-electronics" class="case-tab-btn px-6 py-2.5 rounded-full text-sm font-semibold border transition-all duration-300 bg-white/70 text-slate-600 border-slate-200 hover:border-slate-300">
+                    電子零件製造
+                </button>
+                <button onclick="switchCase('publish')" id="btn-publish" class="case-tab-btn px-6 py-2.5 rounded-full text-sm font-semibold border transition-all duration-300 bg-white/70 text-slate-600 border-slate-200 hover:border-slate-300">
+                    出版與娛樂產業
+                </button>
+            </div>
+
+            <!-- Interactive Cases Display Container -->
+            <div class="relative min-h-[420px]">
+                
+                <!-- Semiconductor Case (Default Active) -->
+                <div id="case-semi" class="case-card transition-all duration-500 opacity-100 scale-100">
+                    <div class="glass rounded-3xl p-8 lg:p-12 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center shadow-lg border border-white/65">
+                        <div class="lg:col-span-7 flex flex-col justify-center">
+                            <div class="flex items-center gap-3 mb-4">
+                                <span class="bg-blue-50 text-blue-700 text-xs font-bold px-3 py-1 rounded-full border border-blue-100">半導體產業</span>
+                                <span class="text-xs text-slate-400 font-medium">製程優化與自動化</span>
+                            </div>
+                            <h3 class="text-2xl lg:text-3xl font-extrabold text-slate-950 mb-6 leading-tight">
+                                大型半導體電子零件製造商：<br class="hidden sm:inline">
+                                建立全自動化碳管理防線
+                            </h3>
+                            
+                            <!-- Before / After Grid -->
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-8">
+                                <div class="bg-red-50/40 p-5 rounded-2xl border border-red-100">
+                                    <div class="flex items-center gap-2 mb-2 text-red-600 font-bold text-sm">
+                                        <i data-lucide="x-circle" class="w-4.5 h-4.5"></i>
+                                        導入前痛點
+                                    </div>
+                                    <p class="text-xs text-slate-600 leading-relaxed">
+                                        跨廠區碳排資料依靠人工 Excel 彙整，資料散亂，面臨客戶急迫碳盤查要求時措手不及，稽核出錯風險高。
+                                    </p>
+                                </div>
+                                <div class="bg-blue-50/40 p-5 rounded-2xl border border-blue-100">
+                                    <div class="flex items-center gap-2 mb-2 text-blue-600 font-bold text-sm">
+                                        <i data-lucide="check-circle" class="w-4.5 h-4.5"></i>
+                                        導入後成效
+                                    </div>
+                                    <p class="text-xs text-slate-700 leading-relaxed">
+                                        運用 Python 客製清洗框架，自動串接跨廠數據，一鍵生成合規標準表，稽核準備期由 <span class="font-bold text-blue-600">3 個月縮減為 2 週</span>。
+                                    </p>
+                                </div>
+                            </div>
+
+                            <p class="text-sm text-slate-500 italic">
+                                "透過流程自動化，不僅消除了跨部門對接阻力，更大幅縮短高薪工程師的作業工時，提升核心價值。"
+                            </p>
+                        </div>
+                        
+                        <!-- Visual Showcase Widget -->
+                        <div class="lg:col-span-5 flex justify-center">
+                            <div class="w-full max-w-sm glass-dark rounded-2xl p-6 border border-slate-100 relative">
+                                <div class="flex justify-between items-center mb-4">
+                                    <span class="text-[10px] font-extrabold text-slate-400 uppercase tracking-widest">實時核心數據指標</span>
+                                    <span class="text-xs text-blue-600 font-semibold bg-blue-50 px-2 py-0.5 rounded">審核成功</span>
+                                </div>
+                                <div class="space-y-4">
+                                    <div>
+                                        <div class="flex justify-between text-xs font-semibold text-slate-600 mb-1">
+                                            <span>ISO 14064-1 查證準備進度</span>
+                                            <span>100%</span>
+                                        </div>
+                                        <div class="w-full bg-slate-200 h-2 rounded-full overflow-hidden">
+                                            <div class="bg-gradient-to-r from-blue-600 to-sky-200 h-full w-full rounded-full"></div>
+                                        </div>
+                                    </div>
+                                    <div class="grid grid-cols-2 gap-2 pt-2">
+                                        <div class="bg-white/60 p-3 rounded-xl border border-slate-100 text-center">
+                                            <span class="text-[10px] text-slate-400 font-bold block mb-0.5">人工作業時間</span>
+                                            <span class="text-lg font-black text-red-500">-84%</span>
+                                        </div>
+                                        <div class="bg-white/60 p-3 rounded-xl border border-slate-100 text-center">
+                                            <span class="text-[10px] text-slate-400 font-bold block mb-0.5">數據精準度</span>
+                                            <span class="text-lg font-black text-blue-600">99.9%</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Electronics Case (Hidden initially) -->
+                <div id="case-electronics" class="case-card absolute inset-0 transition-all duration-500 opacity-0 scale-95 pointer-events-none">
+                    <div class="glass rounded-3xl p-8 lg:p-12 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center shadow-lg border border-white/65">
+                        <div class="lg:col-span-7 flex flex-col justify-center">
+                            <div class="flex items-center gap-3 mb-4">
+                                <span class="bg-blue-50 text-blue-700 text-xs font-bold px-3 py-1 rounded-full border border-blue-100">電子零件製造</span>
+                                <span class="text-xs text-slate-400 font-medium">綠色供應鏈接軌</span>
+                            </div>
+                            <h3 class="text-2xl lg:text-3xl font-extrabold text-slate-950 mb-6 leading-tight">
+                                中堅型電子零組件廠：<br class="hidden sm:inline">
+                                突破國際客戶稽核防線
+                            </h3>
+                            
+                            <!-- Before / After Grid -->
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-8">
+                                <div class="bg-red-50/40 p-5 rounded-2xl border border-red-100">
+                                    <div class="flex items-center gap-2 mb-2 text-red-600 font-bold text-sm">
+                                        <i data-lucide="x-circle" class="w-4.5 h-4.5"></i>
+                                        導入前痛點
+                                    </div>
+                                    <p class="text-xs text-slate-600 leading-relaxed">
+                                        面對品牌大廠日益嚴格的碳中和期程索取，因企業內無專業綠領人才，面臨失去核心客戶下季訂單的重大危機。
+                                    </p>
+                                </div>
+                                <div class="bg-blue-50/40 p-5 rounded-2xl border border-blue-100">
+                                    <div class="flex items-center gap-2 mb-2 text-blue-600 font-bold text-sm">
+                                        <i data-lucide="check-circle" class="w-4.5 h-4.5"></i>
+                                        導入後成效
+                                    </div>
+                                    <p class="text-xs text-slate-700 leading-relaxed">
+                                        透過深度 ESG 策略引導、iPAS 碳盤查計畫培訓，於半年內協助該廠自主提出合規減碳路線圖，<span class="font-bold text-blue-600">穩守供應鏈地位且爭取到新訂單</span>。
+                                    </p>
+                                </div>
+                            </div>
+
+                            <p class="text-sm text-slate-500 italic">
+                                "不僅協助合規，更為公司全面提升商業敏捷度和國際級永續治理的品牌信任。"
+                            </p>
+                        </div>
+                        
+                        <!-- Visual Showcase Widget -->
+                        <div class="lg:col-span-5 flex justify-center">
+                            <div class="w-full max-w-sm glass-dark rounded-2xl p-6 border border-slate-100 relative">
+                                <div class="flex justify-between items-center mb-4">
+                                    <span class="text-[10px] font-extrabold text-slate-400 uppercase tracking-widest">客戶審核狀態</span>
+                                    <span class="text-xs text-blue-600 font-semibold bg-blue-50 px-2 py-0.5 rounded">通過 Tier-1 審查</span>
+                                </div>
+                                <div class="space-y-4">
+                                    <div>
+                                        <div class="flex justify-between text-xs font-semibold text-slate-600 mb-1">
+                                            <span>綠色供應鏈標準符合率</span>
+                                            <span>98.5%</span>
+                                        </div>
+                                        <div class="w-full bg-slate-200 h-2 rounded-full overflow-hidden">
+                                            <div class="bg-gradient-to-r from-blue-600 to-sky-200 h-full w-[98.5%] rounded-full"></div>
+                                        </div>
+                                    </div>
+                                    <div class="grid grid-cols-2 gap-2 pt-2">
+                                        <div class="bg-white/60 p-3 rounded-xl border border-slate-100 text-center">
+                                            <span class="text-[10px] text-slate-400 font-bold block mb-0.5">碳排估算精度</span>
+                                            <span class="text-lg font-black text-blue-600">最高 A 級</span>
+                                        </div>
+                                        <div class="bg-white/60 p-3 rounded-xl border border-slate-100 text-center">
+                                            <span class="text-[10px] text-slate-400 font-bold block mb-0.5">新合約簽訂率</span>
+                                            <span class="text-lg font-black text-blue-600">100% 續約</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Publishing/Entertainment Case (Hidden initially) -->
+                <div id="case-publish" class="case-card absolute inset-0 transition-all duration-500 opacity-0 scale-95 pointer-events-none">
+                    <div class="glass rounded-3xl p-8 lg:p-12 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center shadow-lg border border-white/65">
+                        <div class="lg:col-span-7 flex flex-col justify-center">
+                            <div class="flex items-center gap-3 mb-4">
+                                <span class="bg-blue-50 text-blue-700 text-xs font-bold px-3 py-1 rounded-full border border-blue-100">出版與娛樂產業</span>
+                                <span class="text-xs text-slate-400 font-medium">數位化精實流程轉型</span>
+                            </div>
+                            <h3 class="text-2xl lg:text-3xl font-extrabold text-slate-950 mb-6 leading-tight">
+                                頂尖出版與數位內容業者：<br class="hidden sm:inline">
+                                流程敏捷改造與綠色創新
+                            </h3>
+                            
+                            <!-- Before / After Grid -->
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-8">
+                                <div class="bg-red-50/40 p-5 rounded-2xl border border-red-100">
+                                    <div class="flex items-center gap-2 mb-2 text-red-600 font-bold text-sm">
+                                        <i data-lucide="x-circle" class="w-4.5 h-4.5"></i>
+                                        導入前痛點
+                                    </div>
+                                    <p class="text-xs text-slate-600 leading-relaxed">
+                                        傳統出版工作流程繁雜、紙張消耗量巨大，且無法量化內容產製過程中的數位碳足跡，缺乏轉型著力點。
+                                    </p>
+                                </div>
+                                <div class="bg-blue-50/40 p-5 rounded-2xl border border-blue-100">
+                                    <div class="flex items-center gap-2 mb-2 text-blue-600 font-bold text-sm">
+                                        <i data-lucide="check-circle" class="w-4.5 h-4.5"></i>
+                                        導入後成效
+                                    </div>
+                                    <p class="text-xs text-slate-700 leading-relaxed">
+                                        引進精實管理制度，串接數位化敏捷發布流程與雲端運算排碳量化工具，<span class="font-bold text-blue-600">節省 50% 無紙化流程成本</span>，並榮獲綠色內容標章認證。
+                                    </p>
+                                </div>
+                            </div>
+
+                            <p class="text-sm text-slate-500 italic">
+                                "將看似非重工業的出版、娛樂內容成功找到永續價值亮點，打造領先同業的數位綠色優勢。"
+                            </p>
+                        </div>
+                        
+                        <!-- Visual Showcase Widget -->
+                        <div class="lg:col-span-5 flex justify-center">
+                            <div class="w-full max-w-sm glass-dark rounded-2xl p-6 border border-slate-100 relative">
+                                <div class="flex justify-between items-center mb-4">
+                                    <span class="text-[10px] font-extrabold text-slate-400 uppercase tracking-widest">數位營運革新指標</span>
+                                    <span class="text-xs text-blue-600 font-semibold bg-blue-50 px-2 py-0.5 rounded">轉型成功</span>
+                                </div>
+                                <div class="space-y-4">
+                                    <div>
+                                        <div class="flex justify-between text-xs font-semibold text-slate-600 mb-1">
+                                            <span>無紙數位化流程覆蓋</span>
+                                            <span>92%</span>
+                                        </div>
+                                        <div class="w-full bg-slate-200 h-2 rounded-full overflow-hidden">
+                                            <div class="bg-gradient-to-r from-blue-600 to-sky-200 h-full w-[92%] rounded-full"></div>
+                                        </div>
+                                    </div>
+                                    <div class="grid grid-cols-2 gap-2 pt-2">
+                                        <div class="bg-white/60 p-3 rounded-xl border border-slate-100 text-center">
+                                            <span class="text-[10px] text-slate-400 font-bold block mb-0.5">營運流程成本</span>
+                                            <span class="text-lg font-black text-blue-600">-50% 降低</span>
+                                        </div>
+                                        <div class="bg-white/60 p-3 rounded-xl border border-slate-100 text-center">
+                                            <span class="text-[10px] text-slate-400 font-bold block mb-0.5">綠色品牌加權</span>
+                                            <span class="text-lg font-black text-blue-600">大幅提升</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- 5️⃣ 外部依賴庫 Dependencies 與需求表單 -->
+    <section id="dependencies" class="py-20 relative z-10 reveal">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <span class="text-xs font-extrabold text-slate-500 uppercase tracking-widest block mb-3">外部依賴庫 (Dependencies)</span>
+                <h2 class="text-3xl md:text-4xl font-extrabold text-slate-950 tracking-tight">多元社群資源與需求表單</h2>
+                <p class="text-slate-500 text-sm mt-3">以依賴庫排列方式展示常用社群與開源平台，並嵌入專屬需求表單入口。</p>
+            </div>
+
+            <div class="grid grid-cols-1 xl:grid-cols-[1.35fr_0.85fr] gap-8">
+                <div class="glass rounded-3xl border border-slate-200/60 p-8 shadow-sm hover:shadow-xl transition-all duration-300">
+                    <div class="flex items-center justify-between gap-4 mb-6">
+                        <div>
+                            <h3 class="text-xl font-bold text-slate-900">社群依賴庫</h3>
+                            <p class="text-sm text-slate-500 mt-1">即時連結你的 LINE、Facebook、LinkedIn 與 GitHub。</p>
+                        </div>
+                        <span class="text-[10px] font-bold uppercase tracking-[0.35em] text-slate-400">Dependencies</span>
+                    </div>
+
+                    <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
+                        <a href="https://aistudy.pse.is/linemdsgroup" target="_blank" rel="noopener noreferrer" class="group bg-slate-950 text-white rounded-3xl p-5 flex flex-col items-center justify-center text-center hover:bg-slate-900 transition-all">
+                            <span class="w-12 h-12 mb-3 rounded-full bg-gradient-to-br from-teal-400 to-cyan-500 flex items-center justify-center text-xl shadow-lg shadow-cyan-500/20">
+                                <i class="fab fa-line"></i>
+                            </span>
+                            <span class="text-xs font-bold uppercase tracking-[0.2em]">LINE</span>
+                        </a>
+                        <a href="https://www.facebook.com/MarketingDataScienceTMR/" target="_blank" rel="noopener noreferrer" class="group bg-slate-950 text-white rounded-3xl p-5 flex flex-col items-center justify-center text-center hover:bg-slate-900 transition-all">
+                            <span class="w-12 h-12 mb-3 rounded-full bg-gradient-to-br from-blue-600 to-sky-500 flex items-center justify-center text-xl shadow-lg shadow-blue-500/20">
+                                <i class="fab fa-facebook-f"></i>
+                            </span>
+                            <span class="text-xs font-bold uppercase tracking-[0.2em]">Facebook</span>
+                        </a>
+                        <a href="https://www.linkedin.com/in/howardzhong/" target="_blank" rel="noopener noreferrer" class="group bg-slate-950 text-white rounded-3xl p-5 flex flex-col items-center justify-center text-center hover:bg-slate-900 transition-all">
+                            <span class="w-12 h-12 mb-3 rounded-full bg-gradient-to-br from-sky-500 to-blue-700 flex items-center justify-center text-xl shadow-lg shadow-sky-500/20">
+                                <i class="fab fa-linkedin-in"></i>
+                            </span>
+                            <span class="text-xs font-bold uppercase tracking-[0.2em]">LinkedIn</span>
+                        </a>
+                        <a href="https://github.com/Sinnerman1597" target="_blank" rel="noopener noreferrer" class="group bg-slate-950 text-white rounded-3xl p-5 flex flex-col items-center justify-center text-center hover:bg-slate-900 transition-all">
+                            <span class="w-12 h-12 mb-3 rounded-full bg-gradient-to-br from-slate-700 to-slate-900 flex items-center justify-center text-xl shadow-lg shadow-slate-900/25">
+                                <i class="fab fa-github"></i>
+                            </span>
+                            <span class="text-xs font-bold uppercase tracking-[0.2em]">GitHub</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="glass rounded-3xl border border-slate-200/60 p-8 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between">
+                    <div>
+                        <span class="text-xs uppercase tracking-[0.25em] text-slate-400">聯絡表單</span>
+                        <h3 class="mt-4 text-3xl font-bold text-slate-950">填寫需求表單</h3>
+                        <p class="mt-4 text-sm text-slate-500 leading-relaxed">請透過專屬 Google Form 提交你的合作需求、目標與關鍵挑戰。</p>
+                    </div>
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSe7clyIoIqcSR2wHHYSUo1hKuZRunPdo29wyJ7TrDy3tQzRCQ/viewform?usp=publish-editor" target="_blank" rel="noopener noreferrer" class="mt-8 inline-flex items-center justify-center gap-3 rounded-2xl bg-blue-600 text-white py-4 px-6 font-semibold shadow-lg shadow-blue-500/20 hover:bg-blue-700 transition-all">
+                        <i class="fa-solid fa-paper-plane"></i>
+                        <span>前往填寫需求表單</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6️⃣ High-Conversion Consultation Section (預約諮詢區 - CTA End Section) -->
+    <section id="consult" class="py-24 relative z-10 bg-slate-50/20 reveal">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="relative glass rounded-3xl p-8 md:p-16 overflow-hidden shadow-2xl border border-white flex flex-col items-center text-center">
+                <!-- Glowing decorative orbs in background -->
+                <div class="absolute -top-32 -left-32 w-64 h-64 bg-blue-200 rounded-full filter blur-[100px] opacity-30"></div>
+                <div class="absolute -bottom-32 -right-32 w-64 h-64 bg-sky-100 rounded-full filter blur-[100px] opacity-40"></div>
+
+                <!-- Section Badge -->
+                <div class="inline-flex items-center gap-2 bg-sky-50 text-blue-700 px-4 py-1.5 rounded-full text-xs font-bold mb-6 border border-blue-100">
+                    <span class="flex h-2 w-2 relative">
+                        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-300 opacity-75"></span>
+                        <span class="relative inline-flex rounded-full h-2 w-2 bg-blue-500"></span>
+                    </span>
+                    諮詢管道暢通
+                </div>
+
+                <!-- Title & pitch -->
+                <h2 class="text-3xl md:text-5xl font-black text-slate-900 tracking-tight leading-tight mb-6 max-w-3xl">
+                    今天就為您的企業 <br class="sm:hidden">
+                    鋪設一條高增長、合規的永續之路
+                </h2>
+                
+                <p class="text-slate-600 text-base md:text-lg font-light leading-relaxed mb-10 max-w-2xl">
+                    不論您正面臨國際客戶的碳盤查壓力，或是期望透過 AI 進行高效率的數位與流程轉型。Jimmy 將協助您把複雜的法規，化為明確的策略。
+                </p>
+
+                <!-- High-fidelity Custom Contact/Appointment Form Integration mockup -->
+                <div class="w-full max-w-md bg-white/80 p-6 rounded-2xl border border-slate-200/50 shadow-lg mb-8 flex flex-col gap-4 text-left">
+                    <div class="flex items-center gap-3 border-b border-slate-100 pb-4">
+                        <div class="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 shrink-0">
+                            <i data-lucide="calendar" class="w-5 h-5"></i>
+                        </div>
+                        <div>
+                            <span class="text-xs text-slate-400 font-bold block">線上視訊對談預約</span>
+                            <span class="text-sm font-bold text-slate-800">1:1 免費 30 分鐘需求評估對談</span>
+                        </div>
+                    </div>
+                    
+                    <ul class="space-y-2 text-xs text-slate-500 font-medium">
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-blue-500 shrink-0"></i> 釐清企業當前的 ESG 合規與轉型痛點</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-blue-500 shrink-0"></i> 評估 AI 自動化工具對您流程的減工幅</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-blue-500 shrink-0"></i> 獲得客製化永續架構與輔導可行性建議</li>
+                    </ul>
+
+                    <a href="https://calendar.app.google/5ooLvYjvvUxjaw2D8" target="_blank" class="w-full bg-blue-600 text-white text-center py-4 rounded-xl font-bold text-sm shadow-lg shadow-blue-500/20 hover:bg-blue-700 active:scale-[0.99] transition-all flex items-center justify-center gap-2 group">
+                        <span>在 Google Calendar 上預約時間</span>
+                        <i data-lucide="external-link" class="w-4 h-4 group-hover:translate-x-0.5 transition-transform"></i>
+                    </a>
+                </div>
+
+                <!-- Trust Guarantees -->
+                <div class="flex flex-wrap justify-center gap-x-8 gap-y-2 text-xs font-semibold text-slate-400">
+                    <span class="flex items-center gap-1.5"><i data-lucide="lock" class="w-4 h-4"></i> 100% 企業商業資訊保密</span>
+                    <span class="flex items-center gap-1.5"><i data-lucide="clock" class="w-4 h-4"></i> 最快 24 小時內回覆對接</span>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 5️⃣ 核心產品與技術解決方案 -->
+    <section id="featured" class="py-20 relative z-10 reveal">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center max-w-3xl mx-auto mb-14">
+                <span class="text-xs font-extrabold text-blue-600 uppercase tracking-widest block mb-3">核心產品與技術解決方案</span>
+                <h2 class="text-3xl md:text-4xl font-extrabold text-slate-950 tracking-tight">延伸支持：行銷數據、保險科技、語音 AI 解決方案</h2>
+                <p class="text-slate-500 text-sm mt-3">這三個產品與技術方案，能補強企業行銷、保險智能與語音 AI 的實務應用。</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                <a href="https://courses.taiwanmds.com/product/information?p=02c0c7b9ec7b11f0b3480242ac110002" target="_blank" rel="noopener noreferrer" class="glass border border-slate-200/50 p-7 rounded-3xl shadow-sm hover:shadow-xl transition-all duration-300 group">
+                    <div class="flex items-center gap-4 mb-5">
+                        <span class="relative z-10 w-12 h-12 rounded-3xl bg-gradient-to-br from-blue-600 to-blue-800 text-white flex items-center justify-center text-xl hover:scale-110 transition-transform shadow-xl shadow-blue-500/20 ring-1 ring-white/20">
+                            <i class="fa-solid fa-rocket text-2xl"></i>
+                        </span>
+                        <div>
+                            <p class="text-xs uppercase tracking-widest text-slate-400">Vibe Coding</p>
+                            <h3 class="text-xl font-bold text-slate-900">行銷數據分析學習圈</h3>
+                        </div>
+                    </div>
+                    <p class="text-sm text-slate-600 leading-relaxed">訂閱Vibe Coding行銷數據分析學習圈，跟著我們一同走入行銷數據分析與vibe coding自動化的世界。</p>
+                </a>
+
+                <a href="https://judgai.com/" target="_blank" rel="noopener noreferrer" class="glass border border-slate-200/50 p-7 rounded-3xl shadow-sm hover:shadow-xl transition-all duration-300 group">
+                    <div class="flex items-center gap-4 mb-5">
+                        <span class="relative z-10 w-12 h-12 rounded-3xl bg-gradient-to-br from-blue-600 to-sky-200 text-white flex items-center justify-center text-xl hover:scale-110 transition-transform shadow-xl shadow-blue-500/20 ring-1 ring-white/20">
+                            <i class="fa-solid fa-robot text-2xl"></i>
+                        </span>
+                        <div>
+                            <p class="text-xs uppercase tracking-widest text-slate-400">保險機器人</p>
+                            <h3 class="text-xl font-bold text-slate-900">當經驗成為奇點，AI更是保險未來的引擎</h3>
+                        </div>
+                    </div>
+                    <p class="text-sm text-slate-600 leading-relaxed">從經驗、法條到正確說明，奇點讓每位保險專業者擁有一位懂法的科技夥伴。</p>
+                </a>
+
+                <a href="https://judgai.com/saymind" target="_blank" rel="noopener noreferrer" class="glass border border-slate-200/50 p-7 rounded-3xl shadow-sm hover:shadow-xl transition-all duration-300 group">
+                    <div class="flex items-center gap-4 mb-5">
+                        <span class="relative z-10 w-12 h-12 rounded-3xl bg-gradient-to-br from-blue-600 to-sky-200 text-white flex items-center justify-center text-xl hover:scale-110 transition-transform shadow-xl shadow-blue-500/20 ring-1 ring-white/20">
+                            <i class="fa-solid fa-headset text-2xl"></i>
+                        </span>
+                        <div>
+                            <p class="text-xs uppercase tracking-widest text-slate-400">SayMind</p>
+                            <h3 class="text-xl font-bold text-slate-900">一站式語音轉錄與 AI 筆記</h3>
+                        </div>
+                    </div>
+                    <p class="text-sm text-slate-600 leading-relaxed">使用 LangChain 搭建的 RAG 系統，可上傳 PDF 並進行精準問答。</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Area -->
+    <footer class="bg-slate-50 py-12 relative z-10 border-t border-slate-200/50">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-6">
+            <div class="flex items-center gap-3">
+                <div class="w-8 h-8 rounded-lg bg-blue-600 flex items-center justify-center text-white font-black text-sm">J</div>
+                <div class="flex flex-col">
+                    <span class="font-bold text-slate-800 text-sm">趙睿濬 Jimmy Zhao</span>
+                    <span class="text-[10px] text-slate-400 font-medium tracking-wider uppercase">AI 永續顧問 © 2026. All Rights Reserved.</span>
+                </div>
+            </div>
+            
+            <div class="flex items-center gap-6 text-xs font-medium text-slate-500">
+                <a href="#hero" class="hover:text-blue-600 transition-colors">回到頁首</a>
+                <a href="#about" class="hover:text-blue-600 transition-colors">關於我</a>
+                <a href="#solutions" class="hover:text-blue-600 transition-colors">解決方案</a>
+                <a href="#cases" class="hover:text-blue-600 transition-colors">實戰案例</a>
+                <a href="https://calendar.app.google/5ooLvYjvvUxjaw2D8" target="_blank" class="hover:text-blue-600 transition-colors flex items-center gap-1">預約連結 <i data-lucide="external-link" class="w-3 h-3"></i></a>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- ==================== FRONTEND INTERACTIVE LOGIC (JavaScript) ==================== -->
+    <script>
+        // 1. Particle Canvas Background Animation
+        const canvas = document.getElementById('particleCanvas');
+        const ctx = canvas.getContext('2d');
+        let particlesArray = [];
+        const colors = ['#3b82f6', '#8b5cf6', '#10b981'];
+
+        // Resize Canvas dynamically
+        function resizeCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
+        window.addEventListener('resize', resizeCanvas);
+        resizeCanvas();
+
+        // Particle Class
+        class Particle {
+            constructor() {
+                this.x = Math.random() * canvas.width;
+                this.y = Math.random() * canvas.height;
+                this.size = Math.random() * 2 + 1;
+                this.speedX = (Math.random() - 0.5) * 0.35;
+                this.speedY = (Math.random() - 0.5) * 0.35;
+                this.color = colors[Math.floor(Math.random() * colors.length)];
+                this.alpha = Math.random() * 0.5 + 0.1;
+            }
+            update() {
+                this.x += this.speedX;
+                this.y += this.speedY;
+
+                // Wrap boundaries
+                if (this.x > canvas.width) this.x = 0;
+                else if (this.x < 0) this.x = canvas.width;
+                if (this.y > canvas.height) this.y = 0;
+                else if (this.y < 0) this.y = canvas.height;
+            }
+            draw() {
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                ctx.fillStyle = this.color;
+                ctx.globalAlpha = this.alpha;
+                ctx.fill();
+            }
+        }
+
+        function initParticles() {
+            particlesArray = [];
+            const numberOfParticles = Math.min(60, Math.floor((canvas.width * canvas.height) / 20000));
+            for (let i = 0; i < numberOfParticles; i++) {
+                particlesArray.push(new Particle());
+            }
+        }
+        initParticles();
+
+        function animateParticles() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            for (let i = 0; i < particlesArray.length; i++) {
+                particlesArray[i].update();
+                particlesArray[i].draw();
+
+                // Draw connecting lines if close enough
+                for (let j = i + 1; j < particlesArray.length; j++) {
+                    const dx = particlesArray[i].x - particlesArray[j].x;
+                    const dy = particlesArray[i].y - particlesArray[j].y;
+                    const distance = Math.sqrt(dx * dx + dy * dy);
+
+                    if (distance < 120) {
+                        ctx.beginPath();
+                        ctx.strokeStyle = '#3b82f6';
+                        // line opacity proportional to closeness
+                        ctx.globalAlpha = (1 - (distance / 120)) * 0.15;
+                        ctx.lineWidth = 0.5;
+                        ctx.moveTo(particlesArray[i].x, particlesArray[i].y);
+                        ctx.lineTo(particlesArray[j].x, particlesArray[j].y);
+                        ctx.stroke();
+                        ctx.closePath();
+                    }
+                }
+            }
+            requestAnimationFrame(animateParticles);
+        }
+        animateParticles();
+
+
+        // 2. Typewriter Animation Effect
+        const typewriterSpan = document.getElementById('typewriter');
+        const phrases = [
+            "提供最奢華的專業服務",
+            "打造合規的減碳路線圖",
+            "用 AI 自動化解脫重複工時",
+            "建構頂尖企業的永續韌性"
+        ];
+        let phraseIdx = 0;
+        let charIdx = 0;
+        let isDeleting = false;
+        let typingSpeed = 100;
+
+        function playTypewriter() {
+            const currentPhrase = phrases[phraseIdx];
+            
+            if (isDeleting) {
+                typewriterSpan.innerText = currentPhrase.substring(0, charIdx - 1);
+                charIdx--;
+                typingSpeed = 50; // Deleting is faster
+            } else {
+                typewriterSpan.innerText = currentPhrase.substring(0, charIdx + 1);
+                charIdx++;
+                typingSpeed = 150; // Typing pace
+            }
+
+            if (!isDeleting && charIdx === currentPhrase.length) {
+                // Pause at the end of the phrase
+                typingSpeed = 2200;
+                isDeleting = true;
+            } else if (isDeleting && charIdx === 0) {
+                isDeleting = false;
+                phraseIdx = (phraseIdx + 1) % phrases.length;
+                typingSpeed = 500; // brief pause before next phrase
+            }
+
+            setTimeout(playTypewriter, typingSpeed);
+        }
+
+        // Delay typewriter launch slightly for better entry feeling
+        setTimeout(playTypewriter, 1000);
+
+
+        // 3. Interactive CTA Button Hover Effect (SaaS Status Update)
+        const interactiveCTA = document.getElementById('interactiveCTA');
+        const ctaSubtext = document.getElementById('ctaSubtext');
+        const ctaMainText = document.getElementById('ctaMainText');
+
+        interactiveCTA.addEventListener('mouseenter', () => {
+            ctaSubtext.innerText = "Status: Ready to Connect";
+            ctaSubtext.classList.remove('text-slate-400');
+            ctaSubtext.classList.add('text-blue-100');
+            ctaMainText.innerText = "立即建立視訊策略對接 ●";
+        });
+
+        interactiveCTA.addEventListener('mouseleave', () => {
+            ctaSubtext.innerText = "諮詢預約通道";
+            ctaSubtext.classList.add('text-slate-400');
+            ctaSubtext.classList.remove('text-blue-100');
+            ctaMainText.innerText = "立即預約 1:1 策略諮詢";
+        });
+
+
+        // 4. Case Studies Tab Switch Logic
+        function switchCase(caseName) {
+            // Update tabs active styles
+            const tabs = document.querySelectorAll('.case-tab-btn');
+            tabs.forEach(tab => {
+                tab.classList.remove('bg-blue-600', 'text-white', 'border-blue-600', 'shadow-md', 'shadow-blue-500/10');
+                tab.classList.add('bg-white/70', 'text-slate-600', 'border-slate-200');
+            });
+
+            // Set clicked tab active
+            const activeTab = document.getElementById(`btn-${caseName}`);
+            activeTab.classList.remove('bg-white/70', 'text-slate-600', 'border-slate-200');
+            activeTab.classList.add('bg-blue-600', 'text-white', 'border-blue-600', 'shadow-md', 'shadow-blue-500/10');
+
+            // Hide all case cards with animations
+            const cards = document.querySelectorAll('.case-card');
+            cards.forEach(card => {
+                card.classList.add('opacity-0', 'scale-95', 'pointer-events-none');
+                card.classList.remove('opacity-100', 'scale-100');
+                card.style.position = 'absolute';
+            });
+
+            // Show selected case card
+            const activeCard = document.getElementById(`case-${caseName}`);
+            activeCard.style.position = 'relative';
+            setTimeout(() => {
+                activeCard.classList.remove('opacity-0', 'scale-95', 'pointer-events-none');
+                activeCard.classList.add('opacity-100', 'scale-100');
+            }, 50);
+        }
+
+
+        // 5. Scroll Header Visual Shrink Effect & Scroll Reveals
+        const mainNav = document.getElementById('mainNav');
+        const navContainer = mainNav.querySelector('nav');
+
+        window.addEventListener('scroll', () => {
+            // Header shrink & shadow update
+            if (window.scrollY > 40) {
+                mainNav.classList.remove('py-5');
+                mainNav.classList.add('py-2');
+                navContainer.classList.add('shadow-md', 'bg-white/90');
+                navContainer.classList.remove('px-6', 'py-3.5');
+                navContainer.classList.add('px-4', 'py-2.5');
+            } else {
+                mainNav.classList.remove('py-2');
+                mainNav.classList.add('py-5');
+                navContainer.classList.remove('shadow-md', 'bg-white/90');
+                navContainer.classList.remove('px-4', 'py-2.5');
+                navContainer.classList.add('px-6', 'py-3.5');
+            }
+
+            // Scroll reveal animation triggers
+            const reveals = document.querySelectorAll('.reveal');
+            reveals.forEach(reveal => {
+                const windowHeight = window.innerHeight;
+                const elementTop = reveal.getBoundingClientRect().top;
+                const elementVisible = 120; // Trigger cushion px
+
+                if (elementTop < windowHeight - elementVisible) {
+                    reveal.classList.add('active');
+                }
+            });
+        });
+
+        // Trigger once initially
+        window.dispatchEvent(new Event('scroll'));
+
+
+        // 6. Mobile Navigation Drawer Interaction
+        const menuBtn = document.getElementById('menuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const menuIcon = document.getElementById('menuIcon');
+        const mobileLinks = document.querySelectorAll('.mobile-nav-link');
+
+        function toggleMobileMenu() {
+            const isOpen = mobileMenu.classList.contains('hidden');
+            if (isOpen) {
+                mobileMenu.classList.remove('hidden');
+                menuIcon.setAttribute('data-lucide', 'x');
+            } else {
+                mobileMenu.classList.add('hidden');
+                menuIcon.setAttribute('data-lucide', 'menu');
+            }
+            lucide.createIcons(); // Recalculate icon render
+        }
+
+        menuBtn.addEventListener('click', toggleMobileMenu);
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                menuIcon.setAttribute('data-lucide', 'menu');
+                lucide.createIcons();
+            });
+        });
+
+
+        // 7. Initialize Lucide Icons
+        document.addEventListener('DOMContentLoaded', () => {
+            lucide.createIcons();
+        });
+    </script>
+</body>
+</html>
