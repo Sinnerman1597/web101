@@ -133,12 +133,40 @@
             opacity: 1;
             transform: translateY(0);
         }
+
+        .video-bg {
+            position: absolute;
+            inset: 0;
+            overflow: hidden;
+            z-index: 0;
+        }
+        .video-bg iframe {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 177.78vh;
+            height: 100vh;
+            min-width: 100%;
+            min-height: 100%;
+            transform: translate(-50%, -50%);
+            pointer-events: none;
+        }
+        .video-overlay {
+            position: absolute;
+            inset: 0;
+            background: rgba(11, 20, 41, 0.35);
+            pointer-events: none;
+        }
     </style>
 </head>
 <body class="bg-white text-slate-800 font-sans antialiased overflow-x-hidden selection:bg-blue-100 selection:text-blue-800">
 
     <!-- Subtle Premium Background Visual Elements -->
     <div class="fixed inset-0 pointer-events-none z-0 overflow-hidden">
+        <div class="video-bg">
+            <iframe src="https://www.youtube.com/embed/i-gmUH_d_8w?autoplay=1&mute=1&controls=0&loop=1&playlist=i-gmUH_d_8w&modestbranding=1&rel=0&iv_load_policy=3&disablekb=1&enablejsapi=1" allow="autoplay; fullscreen" frameborder="0" allowfullscreen></iframe>
+            <div class="video-overlay"></div>
+        </div>
         <!-- Grid overlay -->
         <div class="absolute inset-0 premium-grid opacity-75"></div>
         
@@ -212,25 +240,25 @@
         <div class="max-w-7xl mx-auto px-6 w-full grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             
             <!-- Left Column: Copy & CTAs -->
-            <div class="lg:col-span-7 flex flex-col text-left">
+            <div class="lg:col-span-7 flex flex-col text-left text-white relative z-10">
                 <!-- Mini Badge -->
-                <div class="inline-flex items-center gap-2 bg-blue-50/80 border border-blue-200/50 text-blue-700 px-4 py-1.5 rounded-full text-xs font-semibold tracking-wider uppercase mb-6 self-start animate-fade-in-down shadow-sm">
+                <div class="inline-flex items-center gap-2 bg-white/10 border border-white/20 text-white px-4 py-1.5 rounded-full text-xs font-semibold tracking-wider uppercase mb-6 self-start animate-fade-in-down shadow-sm">
                     <span class="flex h-2 w-2 relative">
-                        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-300 opacity-75"></span>
-                        <span class="relative inline-flex rounded-full h-2 w-2 bg-blue-500"></span>
+                        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-white/40 opacity-75"></span>
+                        <span class="relative inline-flex rounded-full h-2 w-2 bg-white"></span>
                     </span>
                     AI 與 ESG 的跨界策略實踐者
                 </div>
 
                 <!-- Animated Main Title -->
-                <h1 class="text-4xl sm:text-5xl md:text-6xl font-black text-slate-900 leading-[1.15] mb-6">
+                <h1 class="text-4xl sm:text-5xl md:text-6xl font-black text-white leading-[1.15] mb-6">
                     輔助企業卓越轉型 <br class="hidden sm:inline">
-                    <span class="bg-gradient-to-r from-blue-600 via-sky-100 to-sky-200 bg-clip-text text-transparent cursor-blink font-black tracking-tight" id="typewriter"></span>
+                    <span class="bg-gradient-to-r from-white via-slate-200 to-slate-100 bg-clip-text text-transparent cursor-blink font-black tracking-tight" id="typewriter"></span>
                 </h1>
 
                 <!-- Subtitle / Value Proposition -->
-                <p class="text-lg md:text-xl text-slate-600 font-light leading-relaxed mb-8 max-w-2xl">
-                    Jimmy helps businesses transform knowledge, workflows, and customer experience through practical Sustainable solutions. <span class="text-slate-800 font-normal">將複雜的永續議題，化為可落地的組織競爭力。</span>
+                <p class="text-lg md:text-xl text-slate-100 font-light leading-relaxed mb-8 max-w-2xl">
+                    Jimmy helps businesses transform knowledge, workflows, and customer experience through practical Sustainable solutions. <span class="text-slate-100 font-normal">將複雜的永續議題，化為可落地的組織競爭力。</span>
                 </p>
 
                 <!-- Premium CTA Buttons -->
@@ -1068,6 +1096,43 @@
                     </div>
                     <p class="text-sm text-slate-600 leading-relaxed">使用 LangChain 搭建的 RAG 系統，可上傳 PDF 並進行精準問答。</p>
                 </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Showcase Section -->
+    <section id="portfolio" class="py-20 relative z-10 reveal bg-slate-50/30">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <span class="text-xs font-extrabold text-blue-600 uppercase tracking-widest block mb-3">作品集展示</span>
+                <h2 class="text-3xl md:text-4xl font-extrabold text-slate-950 tracking-tight">精選 YouTube Shorts 作品</h2>
+                <p class="text-slate-500 text-sm mt-3">純畫面展示，已設定自動播放、靜音與循環，呈現你的鞋款短片作品。</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="rounded-3xl overflow-hidden border border-slate-200 bg-white shadow-sm">
+                    <div class="relative w-full" style="padding-top:56.25%;">
+                        <iframe class="absolute inset-0 w-full h-full" src="https://www.youtube.com/embed/h7hM5BlOcMY?autoplay=1&mute=1&loop=1&playlist=h7hM5BlOcMY&controls=0&modestbranding=1&rel=0&showinfo=0&iv_load_policy=3" title="VOBO皮鞋" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                    <div class="p-4 text-center">
+                        <p class="text-sm font-semibold text-slate-900">VOBO皮鞋</p>
+                    </div>
+                </div>
+                <div class="rounded-3xl overflow-hidden border border-slate-200 bg-white shadow-sm">
+                    <div class="relative w-full" style="padding-top:56.25%;">
+                        <iframe class="absolute inset-0 w-full h-full" src="https://www.youtube.com/embed/bcFnNsTVntk?autoplay=1&mute=1&loop=1&playlist=bcFnNsTVntk&controls=0&modestbranding=1&rel=0&showinfo=0&iv_load_policy=3" title="SHARK 鯊克防水鞋" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                    <div class="p-4 text-center">
+                        <p class="text-sm font-semibold text-slate-900">SHARK 鯊克防水鞋</p>
+                    </div>
+                </div>
+                <div class="rounded-3xl overflow-hidden border border-slate-200 bg-white shadow-sm">
+                    <div class="relative w-full" style="padding-top:56.25%;">
+                        <iframe class="absolute inset-0 w-full h-full" src="https://www.youtube.com/embed/n9VTjZdNvEQ?autoplay=1&mute=1&loop=1&playlist=n9VTjZdNvEQ&controls=0&modestbranding=1&rel=0&showinfo=0&iv_load_policy=3" title="黑武士鞋" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                    <div class="p-4 text-center">
+                        <p class="text-sm font-semibold text-slate-900">黑武士鞋</p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
